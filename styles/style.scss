@@ -1,22 +1,46 @@
-.father {
-  display: grid;
-  grid-template-columns: [cucumber] 100px [potato] 200px [banana] 50px [brocoli];
-  grid-template-rows: 200px 100px;
-  gap: 10px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+
+@mixin smallDevice {
+    @media screen and (min-width: $breakpoint-sm) {
+      @content;
+    }
 }
 
-.child {
-  background-color: tomato;
-  display: flex;
-  color: white;
-  font-size: 28px;
-  align-items: center;
-  justify-content: center;
+@mixin midiumDevice {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
 }
 
-.child:last-child {
-  background-color: turquoise;
-  /* grid-column-start: 2;
-  grid-column-end: -1; */
-  grid-column : 1 / -1;
+@mixin largeDevice {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xlDevice {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+body {
+  @include smallDevice {
+    background-color: blue;
+  }
+
+  @include midiumDevice {
+    background-color: red;
+  }
+
+  @include largeDevice {
+    background-color: purple;
+  }
+
+  @include xlDevice {
+    background-color: pink;
+  }
 }
