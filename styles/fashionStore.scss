@@ -1,0 +1,121 @@
+@import "./reset.scss";
+
+$deepBrown: #1f1414;
+
+body {
+  background-color: #dce6d1;
+  height: 100vh;
+}
+
+nav {
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #241A1A;
+}
+
+.frame {
+  width: 480px;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #c6caca;
+  box-shadow: 5px 10px 10px rgba($color: #000000, $alpha: 0.5);
+}
+
+.header {
+  padding: 50px 15px 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.total {
+  background-color: $deepBrown;
+  padding: 30px 15px;
+  color: #dee2e2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: bold;
+  gap: 10px;
+  .total__price {
+    font-size: 22px;
+  }
+  .total__subtitle {
+    font-size: 14px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .item {
+    background-color: #d7dbdb;
+    border-top: 4px solid $deepBrown;
+    position: relative;
+    .item__info {
+      padding: 30px 15px;
+      display: flex;
+      align-items: flex-start;
+      .item__info-col {
+        font-weight: bold;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &:nth-child(2) {
+          align-items: flex-end;
+        }
+      }
+      .item__title {
+        font-size: 42px;
+        text-transform: uppercase;
+      }
+      .item__subtitle {
+        font-size: 16px;
+      }
+      .item__total-price {
+        font-size: 34px;
+      }
+      .item__piece-price {
+        font-size: 16px;
+      }
+    }
+    .item__specs {
+      border-top: 4px solid $deepBrown;
+      border-bottom: 4px solid $deepBrown;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 130px);
+      .spec {
+        padding: 25px;
+        display: flex;
+        font-weight: bold;
+        flex-direction: column;
+        justify-content: conter;
+        &:last-child {
+          border-left: 4px solid $deepBrown;
+        }
+      }
+    }
+    .item__photo {
+      position: absolute;
+      width: 40%;
+      height: 65%;
+      border: 4px solid $deepBrown;
+      right: 15px;
+      bottom: 0px;
+      object-fit: cover;
+    }
+  }
+}
+
