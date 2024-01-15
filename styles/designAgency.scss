@@ -1,5 +1,18 @@
 @import "./reset.scss";
 
 body {
-  background-color: bisque;
+  height: 100vh;
+  background-color: #7d4aa9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.wrapper {
+  max-width: 80%;
+  background-color: black;
+}
+
+.grid {
+  display: grid;
 }
